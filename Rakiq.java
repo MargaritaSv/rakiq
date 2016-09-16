@@ -11,7 +11,12 @@ public class Rakiq {
     public static final int TIME_TO_BOIL = 200;
 
     public enum RakiqTypes {
-        PLUM, APRICOT, FRAPPES;
+        PLUM(1), APRICOT(2), FRAPPES(3);
+        private int value;
+
+         RakiqTypes(int value) {
+            this.value = value;
+        }
     }
 
     private BlockingQueue<PeopleBoil> tanks = new ArrayBlockingQueue<PeopleBoil>(1);

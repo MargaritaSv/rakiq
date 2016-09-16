@@ -14,6 +14,7 @@ public class Picker extends People {
     @Override
     public void run() {
 
+/*
         while (true) {
             while (!tank.isEmpty()) {
                 try {
@@ -30,5 +31,8 @@ public class Picker extends People {
 
 
         }
+        */
+
+
     }
 }
