@@ -3,7 +3,7 @@ package rakiq;
 /**
  * Created by magy on 16.09.16.
  */
-public class People {
+public abstract class People implements Runnable {
     private String name;
     private byte age;
 
