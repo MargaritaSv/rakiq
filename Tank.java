@@ -5,4 +5,13 @@ package rakiq;
  */
 public class Tank {
 
+    //TODO: check every tank
+    public boolean isEmpty() {
+        return true;
+    }
+
+    public Rakiq takeFull() {
+        Rakiq r=null;
+        return r;
+    }
 }

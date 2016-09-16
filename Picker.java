@@ -14,5 +14,21 @@ public class Picker extends People {
     @Override
     public void run() {
 
+        while (true) {
+            while (!tank.isEmpty()) {
+                try {
+                    System.out.println("There's no full tank!");
+                    synchronized (tank) {
+                        tank.wait();
+                    }
+                } catch (InterruptedException ex) {
+                    System.out.println(ex.getMessage());
+
+                }
+            }
+
+
+
+        }
     }
 }
