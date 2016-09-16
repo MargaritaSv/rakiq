@@ -17,7 +17,7 @@ public class Tank {
     private List<Picker> pickers = new ArrayList<>();
     private List<PeopleBoil> peopleBoils = new ArrayList<>();
     //number<type,litter>
-    private ConcurrentHashMap<String, Integer> inTank = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Integer, Rakiq> inTank = new ConcurrentHashMap<>();
 
     public Tank(List<Picker> pickers) {
         this.pickers = pickers;
@@ -27,8 +27,8 @@ public class Tank {
         this.peopleBoils.forEach(peopleBoil -> new Thread(peopleBoil).start());
 
         //create tanks
-        for (int i = 0; i < 4; i++) {
-            inTank.put(Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)].toString(), 0);
+        for (int i = 1; i <= 5; i++) {
+            inTank.put(i, new Rakiq());
         }
     }
 
@@ -42,6 +42,7 @@ public class Tank {
 
     //TODO: check every tank
     public boolean isEmpty() {
+
         return true;
     }
 
