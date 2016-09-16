@@ -14,18 +14,18 @@ public class Rakiq {
         PLUM, APRICOT, FRAPPES;
     }
 
-    private BlockingQueue<Rakidjiiq> tanks = new ArrayBlockingQueue<Rakidjiiq>(1);
+    private BlockingQueue<PeopleBoil> tanks = new ArrayBlockingQueue<PeopleBoil>(1);
 
-    public void boil(Rakidjiiq rakidjiiq) {
+    public void boil(PeopleBoil peopleBoil) {
         try {
             Thread.sleep(TIME_TO_BOIL);
-            tanks.put(rakidjiiq);
+            tanks.put(peopleBoil);
         } catch (InterruptedException ex) {
             return;
         }
     }
 
-    public Rakidjiiq readyWithBoil() {
+    public PeopleBoil readyWithBoil() {
         try {
             return tanks.take();
         } catch (InterruptedException ex) {
