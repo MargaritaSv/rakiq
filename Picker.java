@@ -16,7 +16,7 @@ public class Picker extends People {
 
 /*
         while (true) {
-            while (!tank.isEmpty()) {
+            while (!tank.isNotMoreThanTwenty()) {
                 try {
                     System.out.println("There's no full tank!");
                     synchronized (tank) {

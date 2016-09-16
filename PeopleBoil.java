@@ -14,7 +14,7 @@ public class PeopleBoil extends People {
     public void run() {
 
         while (true) {
-            while (tank.isEmpty()) {
+            while (tank.isNotMoreThanTwenty()) {
                 try {
                     System.out.println("There's no full tank!");
                     synchronized (tank) {

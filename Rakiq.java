@@ -2,7 +2,6 @@ package rakiq;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by magy on 16.09.16.
@@ -11,11 +10,15 @@ public class Rakiq {
 
     public static final int TIME_TO_BOIL = 200;
     private String typeRakiq;
-    private AtomicInteger litter;
+    private Integer kg;
 
     public Rakiq() {
         this.typeRakiq = Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)].toString();
-        this.litter = new AtomicInteger(0);
+        this.kg = 0;
+    }
+
+    public Integer getKg() {
+        return kg;
     }
 
     public enum RakiqTypes {

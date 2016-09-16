@@ -2,6 +2,7 @@ package rakiq;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -41,8 +42,12 @@ public class Tank {
     }
 
     //TODO: check every tank
-    public boolean isEmpty() {
-
+    public boolean isNotMoreThanTwenty() {
+        for (Map.Entry<Integer, Rakiq> t : inTank.entrySet()) {
+            if (t.getValue().getKg() >= 10) {
+                return false;
+            }
+        }
         return true;
     }
 
