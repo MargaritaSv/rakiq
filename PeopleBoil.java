@@ -14,7 +14,7 @@ public class PeopleBoil extends People {
     public void run() {
 
         while (true) {
-            while (tank.isNotMoreThanTwenty()) {
+            while (tank.isNotMoreThanTen()) {
                 try {
                     System.out.println("There's no full tank!");
                     synchronized (tank) {
@@ -26,7 +26,7 @@ public class PeopleBoil extends People {
                 }
             }
         }
-
+/*
         //if we have full tank
         Rakiq rakiq = tank.takeFull();
         System.out.println("Boil");
@@ -43,5 +43,6 @@ public class PeopleBoil extends People {
         synchronized (tank) {
             tank.notifyAll();
         }
+        */
     }
 }

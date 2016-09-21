@@ -42,7 +42,7 @@ public class Tank {
     }
 
     //TODO: check every tank
-    public boolean isNotMoreThanTwenty() {
+    public boolean isNotMoreThanTen() {
         for (Map.Entry<Integer, Rakiq> t : inTank.entrySet()) {
             if (t.getValue().getKg() >= 10) {
                 return false;
@@ -53,6 +53,12 @@ public class Tank {
 
     public Rakiq takeFull() {
         Rakiq r = null;
-        return r;
+        for (Map.Entry<Integer, Rakiq> t : inTank.entrySet()) {
+            if (t.getValue().getKg() >= 10) {
+                r = t.getValue();
+                return r;
+            }
+        }
+        return null;
     }
 }

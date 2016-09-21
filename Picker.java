@@ -14,9 +14,9 @@ public class Picker extends People {
     @Override
     public void run() {
 
-/*
+
         while (true) {
-            while (!tank.isNotMoreThanTwenty()) {
+            while (!tank.isNotMoreThanTen()) {
                 try {
                     System.out.println("There's no full tank!");
                     synchronized (tank) {
@@ -31,7 +31,6 @@ public class Picker extends People {
 
 
         }
-        */
 
 
     }
