@@ -21,6 +21,10 @@ public class Rakiq {
         return kg;
     }
 
+    public String getTypeRakiq() {
+        return typeRakiq;
+    }
+
     public enum RakiqTypes {
         PLUM(1), APRICOT(2), FRAPPES(3);
 
@@ -32,6 +36,11 @@ public class Rakiq {
     }
 
     private BlockingQueue<PeopleBoil> tanks = new ArrayBlockingQueue<PeopleBoil>(1);
+
+    //add more fruits
+    public void addFruits(int kg) {
+        this.kg += kg;
+    }
 
     public void boil(PeopleBoil peopleBoil) {
         try {

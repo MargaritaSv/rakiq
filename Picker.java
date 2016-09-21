@@ -16,10 +16,9 @@ public class Picker extends People {
 
         while (true) {
 
-            /*
-            while (!tank.isNotMoreThanTen()) {
+            while (tank.isMoreThanTen()) {
                 try {
-                    System.out.println("There's no full tank!");
+                    System.out.println("There's full tank! You'll get some kg rakiq.");
                     synchronized (tank) {
                         tank.wait();
                     }
@@ -29,8 +28,15 @@ public class Picker extends People {
                 }
             }
 
-*/
 
+            try {
+                Thread.sleep(200);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            tank.inTankPicker();
+            notifyAll();
         }
 
 

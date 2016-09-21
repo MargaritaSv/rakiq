@@ -22,6 +22,10 @@ public abstract class People implements Runnable {
         this.rakiqTypes = rakiqTypes;
     }
 
+    public Rakiq.RakiqTypes getRakiqTypes() {
+        return rakiqTypes;
+    }
+
     @Override
     public String toString() {
         return "People{" +

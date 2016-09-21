@@ -11,9 +11,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by magy on 16.09.16.
  */
 public class Tank {
-
+    private Rakiq.RakiqTypes rakiqType;
     //for sum of all litters
-    static AtomicInteger allLitter = new AtomicInteger(0);
+    static AtomicInteger allLitters = new AtomicInteger(0);
 
     private List<Picker> pickers = new ArrayList<>();
     private List<PeopleBoil> peopleBoils = new ArrayList<>();
@@ -33,6 +33,19 @@ public class Tank {
         }
     }
 
+    public void inTankPicker() {
+        int takeKg = new Random().nextInt(1) + 9;
+        Picker picker = pickers.get(new Random().nextInt() + pickers.size() - 1);
+
+        //get tank with rakiq who match with type picker
+        for (Map.Entry<Integer, Rakiq> t : inTank.entrySet()) {
+            if (t.getValue().getTypeRakiq().equals(picker.getRakiqTypes())) {
+                t.getValue().addFruits(takeKg);
+                System.out.println(Thread.currentThread().getName() + "put " + t.getValue().getTypeRakiq());
+            }
+        }
+    }
+
     private void createPeopleBoils() {
         PeopleBoil peopleBoil;
         for (int i = 0; i < 3; i++) {
@@ -42,13 +55,13 @@ public class Tank {
     }
 
     //TODO: check every tank
-    public boolean isNotMoreThanTen() {
+    public boolean isMoreThanTen() {
         for (Map.Entry<Integer, Rakiq> t : inTank.entrySet()) {
             if (t.getValue().getKg() >= 10) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public Rakiq takeFull() {

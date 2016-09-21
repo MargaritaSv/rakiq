@@ -14,7 +14,7 @@ public class Demo {
         //create 7 pickers
 
         Picker picker;
-        ArrayList<Picker> pickers = new ArrayList<>();
+        ArrayList<Picker> pickers = new ArrayList<>(NUMBER_PICKERS);
         for (int i = 1; i <= pickers.size(); i++) {
             pickers.add(new Picker("Pickers" + i, (byte) (new Random().nextInt(40) + 20), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]));
         }
