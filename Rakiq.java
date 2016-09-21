@@ -14,7 +14,7 @@ public class Rakiq {
 
     public Rakiq() {
         this.typeRakiq = Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)].toString();
-        this.kg = 0;
+        resetKg();
     }
 
     public Integer getKg() {
@@ -37,15 +37,12 @@ public class Rakiq {
 
     private BlockingQueue<PeopleBoil> tanks = new ArrayBlockingQueue<PeopleBoil>(1);
 
-    //add more fruits
-    public void addFruits(int kg) {
-        this.kg += kg;
-    }
 
     public void boil(PeopleBoil peopleBoil) {
         try {
             Thread.sleep(TIME_TO_BOIL);
             tanks.put(peopleBoil);
+            resetKg();
         } catch (InterruptedException ex) {
             return;
         }
@@ -58,5 +55,14 @@ public class Rakiq {
             System.out.println(ex.getMessage());
         }
         return null;
+    }
+
+    //add more fruits
+    public void addFruits(int kg) {
+        this.kg += kg;
+    }
+
+    private void resetKg() {
+        this.kg = 0;
     }
 }

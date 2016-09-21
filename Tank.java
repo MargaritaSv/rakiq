@@ -20,9 +20,12 @@ public class Tank {
     //number<type,litter>
     private ConcurrentHashMap<Integer, Rakiq> inTank = new ConcurrentHashMap<>();
 
+    public Tank() {
+    }
+
     public Tank(List<Picker> pickers) {
         this.pickers = pickers;
-        this.pickers.forEach(picker -> new Thread(picker).start());
+        pickers.forEach(picker -> new Thread(picker).start());
 
         createPeopleBoils();
         this.peopleBoils.forEach(peopleBoil -> new Thread(peopleBoil).start());
@@ -49,7 +52,7 @@ public class Tank {
     private void createPeopleBoils() {
         PeopleBoil peopleBoil;
         for (int i = 0; i < 3; i++) {
-            peopleBoil = new PeopleBoil("People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]);
+            peopleBoil = new PeopleBoil(this,"People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]);
             peopleBoils.add(peopleBoil);
         }
     }

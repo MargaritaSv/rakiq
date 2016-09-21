@@ -6,8 +6,8 @@ package rakiq;
 public class Picker extends People {
     private Tank tank;
 
-    public Picker(String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
-        super(name, age, rakiqTypes);
+    public Picker(Tank tank, String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+        super(tank,name, age, rakiqTypes);
     }
 
     @Override
@@ -38,7 +38,5 @@ public class Picker extends People {
             tank.inTankPicker();
             notifyAll();
         }
-
-
     }
 }

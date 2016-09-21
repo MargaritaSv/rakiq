@@ -7,8 +7,11 @@ public abstract class People implements Runnable {
     private String name;
     private byte age;
     private Rakiq.RakiqTypes rakiqTypes;
+    private Tank tank;
 
-    public People(String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+    public People(Tank tank, String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+        this.tank = tank;
+
         if (name == null || name.trim().length() == 0) {
             throw new IllegalArgumentException("The name is not correct.");
         }
