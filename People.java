@@ -9,8 +9,8 @@ public abstract class People implements Runnable {
     private Rakiq.RakiqTypes rakiqTypes;
     private Tank tank;
 
-    public People(Tank tank, String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
-        this.tank = tank;
+    public People( String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+        //this.tank = tank;
 
         if (name == null || name.trim().length() == 0) {
             throw new IllegalArgumentException("The name is not correct.");
@@ -28,6 +28,7 @@ public abstract class People implements Runnable {
     public Rakiq.RakiqTypes getRakiqTypes() {
         return rakiqTypes;
     }
+
 
     @Override
     public String toString() {

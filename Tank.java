@@ -11,18 +11,21 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by magy on 16.09.16.
  */
 public class Tank {
-    private static final int NUMBER_PICKERS = 7;
     private Rakiq.RakiqTypes rakiqType;
+    
     //for sum of all litters
     static AtomicInteger allLitters = new AtomicInteger(0);
 
     private List<Picker> pickers = new ArrayList<>();
     private List<PeopleBoil> peopleBoils = new ArrayList<>();
-    //<numberOfTank,rakiq>
+    //number<type,litter>
     private ConcurrentHashMap<Integer, Rakiq> inTank = new ConcurrentHashMap<>();
-
+/*
     public Tank() {
-        createPickers();
+    }
+*/
+    public Tank(List<Picker> pickers) {
+        this.pickers = pickers;
         pickers.forEach(picker -> new Thread(picker).start());
 
         createPeopleBoils();
@@ -50,14 +53,8 @@ public class Tank {
     private void createPeopleBoils() {
         PeopleBoil peopleBoil;
         for (int i = 0; i < 3; i++) {
-            peopleBoil = new PeopleBoil(this, "People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]);
-            this.peopleBoils.add(peopleBoil);
-        }
-    }
-
-    private void createPickers() {
-        for (int i = 1; i <= NUMBER_PICKERS; i++) {
-            this.pickers.add(new Picker(this, "Pickers" + i, (byte) (new Random().nextInt(40) + 20), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]));
+            peopleBoil = new PeopleBoil("People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]);
+            peopleBoils.add(peopleBoil);
         }
     }
 
