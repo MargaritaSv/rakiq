@@ -36,7 +36,7 @@ public class Tank {
     private void createPeopleBoils() {
         PeopleBoil peopleBoil;
         for (int i = 0; i < 3; i++) {
-            peopleBoil = new PeopleBoil("People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40));
+            peopleBoil = new PeopleBoil("People_Boil_Rakiq " + i, (byte) (new Random().nextInt(20) + 40), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]);
             peopleBoils.add(peopleBoil);
         }
     }

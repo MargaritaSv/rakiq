@@ -6,9 +6,8 @@ package rakiq;
 public class Picker extends People {
     private Tank tank;
 
-    public Picker(String name, byte age) {
-        super(name, age);
-
+    public Picker(String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+        super(name, age, rakiqTypes);
     }
 
     @Override
@@ -16,6 +15,8 @@ public class Picker extends People {
 
 
         while (true) {
+
+            /*
             while (!tank.isNotMoreThanTen()) {
                 try {
                     System.out.println("There's no full tank!");
@@ -28,7 +29,7 @@ public class Picker extends People {
                 }
             }
 
-
+*/
 
         }
 

@@ -16,7 +16,7 @@ public class Demo {
         Picker picker;
         ArrayList<Picker> pickers = new ArrayList<>();
         for (int i = 1; i <= pickers.size(); i++) {
-            pickers.add(new Picker("Pickers" + i, (byte) (new Random().nextInt(40) + 20)));
+            pickers.add(new Picker("Pickers" + i, (byte) (new Random().nextInt(40) + 20), Rakiq.RakiqTypes.values()[(int) (Math.random() * 3)]));
         }
 
         Tank tank = new Tank(pickers);

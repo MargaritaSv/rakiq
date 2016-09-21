@@ -6,8 +6,8 @@ package rakiq;
 public class PeopleBoil extends People {
     private Tank tank;
 
-    public PeopleBoil(String name, byte age) {
-        super(name, age);
+    public PeopleBoil(String name, byte age, Rakiq.RakiqTypes rakiqTypes) {
+        super(name, age, rakiqTypes);
     }
 
     @Override
